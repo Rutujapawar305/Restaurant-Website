@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <link rel="shortcut icon" href="./images/logo1.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Table Booking</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 20px;
+            padding: 20px;
+        }
+        .container {
+            max-width: 400px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        input, select, button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 8px;
+            margin-bottom: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+            border: none;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Book a Table</h2>
+    <form id="bookingForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" required />
+        
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" required />
+        
+        <label for="guests">Number of Guests:</label>
+        <select id="guests" required>
+            <option value="">Select</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5+">5 or more</option>
+        </select>
+        
+        <label for="date">Date:</label>
+        <input type="date" id="date" required />
+        
+        <label for="time">Time:</label>
+        <input type="time" id="time" required />
+        
+        <button type="button" onclick="bookTable()">Book Table</button>
+    </form>
+</div>
+
+<script>
+    function bookTable() {
+        // Get form values
+        const name = document.getElementById('name').value;
+        const phone = document.getElementById('phone').value;
+        const guests = document.getElementById('guests').value;
+        const date = document.getElementById('date').value;
+        const time = document.getElementById('time').value;
+
+        // Validate form fields
+        if (name && phone && guests && date && time) {
+            // Show success popup message
+            alert(`Table booked successfully for ${name} on ${date} at ${time} for ${guests} guests.`);
+        } else {
+            // Show error popup message if fields are missing
+            alert('Please fill out all fields.');
+        }
+    }
+</script>
+
+</body>
+</html>

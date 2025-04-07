@@ -7,6 +7,7 @@
  <meta charset="UTF-8">
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
  <title>Food Website |Home</title>
+
 </head>
 <div>
  <header>
@@ -37,16 +38,16 @@
  </div>
  <div class="nav">
  <ul>
- <a href="">
+ <a href="Home.html">
  <li>Home</li>
  </a>
- <a href="">
+ <a href="About.html">
  <li>About</li>
  </a>
- <a href="">
+ <a href="FoodMenu.html">
  <li>Food Menu</li>
  </a>
- <a href="">
+ <a href="BookTable.html">
  <li>Book Table</li>
  </a>
  </ul>
@@ -61,16 +62,16 @@
  </div>
  <div class="nav">
  <ul>
- <a href="#">
+ <a href="Home.html">
  <li>Home</li>
  </a>
- <a href="#">
+ <a href="About.html">
  <li>About</li>
  </a>
- <a href="#">
+ <a href="FoodMenu.html">
  <li>Food Menu</li>
  </a>
- <a href="#">
+ <a href="BookTable.html">
  <li>Book Table</li>
  </a>
  </ul>
@@ -105,10 +106,15 @@
  <div>
  <h1>Enjoy <span>Delicious Food</span> in your Healthy Life.</h1>
  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iste
-error praesentium facilis debitis amet rem eius tempora blanditiis earum
-accusantium quisquam repellat atque ullam, nihil minima maxime quia, ab
-quibusdam.</p>
- <button class="red_btn">Visit Now -><i class="fa-solid fa-arrowright-long"></i></button>
+    error praesentium facilis debitis amet rem eius tempora blanditiis earum
+    accusantium quisquam repellat atque ullam, nihil minima maxime quia, ab
+    quibusdam.</p>
+    <button class="red_btn" onclick="openNewPage3()">Visit Now -><i class="fa-solid fa-arrowright-long"></i></button>
+    <script>
+       function openNewPage3(){
+           window.location.href='login.html';
+       }
+   </script>
  </div>
  <div>
  <img src="./images/foody2.png" alt="">
@@ -120,25 +126,40 @@ quibusdam.</p>
  <div>
  <img src ="./images/itemm1.webp" alt="food item">
  </div>
- <h3>Food name</h3>
+ <h3>NON-VEG</h3>
  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum, dolorum.</p>
- <button class="white_btn"> See Menu</button>
+ <button class="white_btn" onclick="openNewPage()"> See Menu</button>
+ <script>
+    function openNewPage(){
+        window.location.href='Nonveg.html';
+    }
+ </script>
  </div>
  <div class="item">
  <div>
  <img src ="./images/item2.png" alt="food item">
  </div>
- <h3>Food name</h3>
+ <h3>VEGETARIAN</h3>
  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum, dolorum.</p>
- <button class="white_btn"> See Menu</button>
+ <button class="white_btn" onclick="openNewPage1()"> See Menu</button>
+ <script>
+    function openNewPage1(){
+        window.location.href='veg.html';
+    }
+ </script>
  </div>
  <div class="item">
  <div>
  <img src ="./images/item3.png" alt="food item">
  </div>
- <h3>Food name</h3>
+ <h3>FASTFOOD</h3>
  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum, dolorum.</p>
- <button class="white_btn"> See Menu</button>
+ <button class="white_btn" onclick="openNewPage2()"> See Menu</button>
+ <script>
+    function openNewPage2(){
+        window.location.href='fastfood.html';
+    }
+ </script>
  </div>
  </div>
  <div class="main_slide2">
@@ -189,31 +210,31 @@ quibusdam.</p>
             <div>
                 <img src="./images/plate1.png" alt="">
             </div>
-            <h3>Food name</h3>
+            <h3>Bombay Duck Rice</h3>
             <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. dolorem doloremque eligendi et.</p>
             <p class="fav-price">$2.90</p>
         </div>
         <div class="item">
             <div>
-                <img src="./images/plate2.png" alt="">
+                <img src="./images/fish.jpg" alt="">
             </div>
-            <h3>Food name</h3>
+            <h3>Fish Fry</h3>
             <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. dolorem doloremque eligendi et.</p>
             <p class="fav-price">$2.90</p>
         </div>
         <div class="item">
             <div>
-                <img src="./images/plate3.jpg" alt="">
+                <img src="./images/Puran Poli.jpg" alt="">
             </div>
-            <h3>Food name</h3>
+            <h3>Puran Poli</h3>
             <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. dolorem doloremque eligendi et.</p>
             <p class="fav-price">$2.90</p>
         </div>
         <div class="item">
             <div>
-                <img src="./images/plate4.png" alt="">
+                <img src="./images/Modak.jpg" alt="">
             </div>
-            <h3>Food name</h3>
+            <h3>Modak</h3>
             <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. dolorem doloremque eligendi et.</p>
             <p class="fav-price">$2.90</p>
         </div>
@@ -249,7 +270,6 @@ quibusdam.</p>
             </div>
         </div>
     </div>
-    
 </div>
 
  </div>
@@ -257,7 +277,12 @@ quibusdam.</p>
     <div>
         <input type="email" placeholder="Example.com">
     </div>
-    <button class="red_btn">Subscribe</button>
+    <button class="red_btn" onclick="openNewPage6()">Book Now</button>
+ <script>
+    function openNewPage6(){
+        window.location.href='table.html';
+    }
+ </script>
     <h2></h2>
  </div>
 </div>

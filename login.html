@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <link rel="shortcut icon" href="./images/logo1.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+
+<style>
+  body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+  }
+
+  .container {
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+      width: 320px;
+  }
+
+  h2 {
+      text-align: center;
+      color: #333;
+  }
+
+  .input-group {
+      margin-bottom: 15px;
+  }
+
+  label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+      color: #555;
+  }
+
+  input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+  }
+
+  button {
+      width: 100%;
+      padding: 10px;
+      background-color: #5cb85c;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+  }
+
+  button:hover {
+      background-color: #4cae4c;
+  }
+
+  .error {
+      color: red;
+      font-size: 14px;
+      margin-top: 5px;
+  }
+
+  .success {
+      color: green;
+      font-size: 16px;
+      text-align: center;
+      margin-top: 10px;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+<form id="loginForm" onsubmit="return validateLogin()">
+  <h2>Login</h2>
+  <div class="input-group">
+      <label for="username">Username</label>
+      <input type="text" id="username" placeholder="Enter username" />
+      <div id="usernameError" class="error"></div>
+  </div>
+  <div class="input-group">
+      <label for="password">Password</label>
+      <input type="password" id="password" placeholder="Enter password" />
+      <div id="passwordError" class="error"></div>
+  </div>
+  <button type="submit">Login</button>
+  <div id="successMessage" class="success"></div>
+</form>
+</div>
+
+<script>
+function validateLogin() {
+  // Get input values
+  const username = document.getElementById('username').value.trim();
+  const password = document.getElementById('password').value.trim();
+
+  // Reset previous error messages
+  document.getElementById('usernameError').innerText = "";
+  document.getElementById('passwordError').innerText = "";
+  document.getElementById('successMessage').innerText = "";
+
+  let isValid = true;
+
+  // Validate username
+  if (username === "") {
+      document.getElementById('usernameError').innerText = "Username is required";
+      isValid = false;
+  }
+
+  // Validate password
+  if (password === "") {
+      document.getElementById('passwordError').innerText = "Password is required";
+      isValid = false;
+  } else if (password.length < 6) {
+      document.getElementById('passwordError').innerText = "Password must be at least 6 characters";
+      isValid = false;
+  }
+
+  // If validation passes, show success message
+  if (isValid) {
+      document.getElementById('successMessage').innerText = "Login successful!";
+      setTimeout(() => {
+          alert("Login successful!");
+          // Redirect to another page (optional)
+          // window.location.href = "dashboard.html";
+      }, 500);
+  }
+
+  return false; // Prevent actual form submission
+}
+</script>
+    
+</body>
+</html>

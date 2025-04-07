@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <link rel="shortcut icon" href="./images/logo1.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NonVeg</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: #ffffff;
+            padding: 60px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            width: 320px;
+        }
+
+        h2 {
+            font-size: 40px;
+            text-align: center;
+            color: #f00909;
+        }
+
+        .food-item {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        input[type="checkbox"] {
+            margin-right: 10px;
+            cursor: pointer;
+        }
+
+        label {
+            font-size: 25px;
+            color: #555;
+            cursor: pointer;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #5cb85c;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #4cae4c;
+        }
+
+        .success {
+            color: green;
+            font-size: 16px;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .error {
+            color: red;
+            font-size: 14px;
+            text-align: center;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <form id="menuForm" onsubmit="return placeOrder()">
+        <h2>Maharashtrian Non-Veg Food Menu</h2>
+
+        <div class="food-item">
+            <input type="checkbox" id="chickenCurry" value="Chicken Curry" />
+            <label for="chickenCurry">Chicken Curry</label>
+        </div>
+
+        <div class="food-item">
+            <input type="checkbox" id="muttonRassa" value="Mutton Rassa" />
+            <label for="muttonRassa">Mutton Rassa</label>
+        </div>
+
+        <div class="food-item">
+            <input type="checkbox" id="fishFry" value="Fish Fry" />
+            <label for="fishFry">Fish Fry</label>
+        </div>
+
+        <div class="food-item">
+            <input type="checkbox" id="prawnMasala" value="Prawn Masala" />
+            <label for="prawnMasala">Prawn Masala</label>
+        </div>
+
+        <div class="food-item">
+            <input type="checkbox" id="andaCurry" value="Anda Curry" />
+            <label for="andaCurry">Anda Curry</label>
+        </div>
+
+        <button type="submit">Place Order</button>
+
+        <div id="successMessage" class="success"></div>
+        <div id="errorMessage" class="error"></div>
+    </form>
+</div>
+
+<script>
+    function placeOrder() {
+        // Get all checkboxes
+        const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+        let selectedItems = [];
+
+        // Reset previous messages
+        document.getElementById('successMessage').innerText = "";
+        document.getElementById('errorMessage').innerText = "";
+
+        // Collect selected items
+        checkboxes.forEach((checkbox) => {
+            if (checkbox.checked) {
+                selectedItems.push(checkbox.value);
+            }
+        });
+
+        if (selectedItems.length === 0) {
+            // Show error if no item is selected
+            document.getElementById('errorMessage').innerText = "Please select at least one item to place an order.";
+            return false;
+        } else {
+            // Show success message with selected items
+            document.getElementById('successMessage').innerText = 
+                `Order Placed Successfully! You ordered: ${selectedItems.join(', ')}`;
+
+            setTimeout(() => {
+                alert("Order Placed Successfully!"); // Optional alert message
+                // Redirect to another page (optional)
+                // window.location.href = "thankyou.html";
+            }, 500);
+        }
+
+        return false; // Prevent actual form submission
+    }
+</script>
+</body>
+</html>
